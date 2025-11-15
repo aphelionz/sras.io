@@ -35,7 +35,25 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Generate ZIP.html from ZIP.md
         run: |
-          npx --yes marked -i ZIP.md -o ZIP.html
+          npx --yes marked -i ZIP.md -o ZIP.content.html
+          cat <<'HTML' > ZIP.html
+          <!DOCTYPE html>
+          <html lang="en">
+            <head>
+              <meta charset="UTF-8" />
+              <title>Shielded Registry Assets ZIP</title>
+              <link rel="stylesheet" href="style.css" />
+            </head>
+            <body>
+              <main>
+          HTML
+          cat ZIP.content.html >> ZIP.html
+          cat <<'HTML' >> ZIP.html
+              </main>
+            </body>
+          </html>
+          HTML
+          rm ZIP.content.html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
