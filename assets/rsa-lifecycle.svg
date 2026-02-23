@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" role="img" aria-labelledby="title desc">
+  <title id="title">RSA lifecycle</title>
+  <desc id="desc">Six connected stages from registry authority to compounding trust.</desc>
+  <rect width="1200" height="500" fill="#f4f6f6" rx="24"/>
+
+  <g font-family="Arial, sans-serif">
+    <path d="M120 250 H1080" stroke="#93a0a8" stroke-width="6" stroke-linecap="round"/>
+
+    <g fill="#ffffff" stroke="#7d8d97" stroke-width="3">
+      <circle cx="120" cy="250" r="44"/>
+      <circle cx="312" cy="250" r="44"/>
+      <circle cx="504" cy="250" r="44"/>
+      <circle cx="696" cy="250" r="44"/>
+      <circle cx="888" cy="250" r="44"/>
+      <circle cx="1080" cy="250" r="44"/>
+    </g>
+
+    <g fill="#223036" font-size="28" font-weight="700" text-anchor="middle">
+      <text x="120" y="262">1</text>
+      <text x="312" y="262">2</text>
+      <text x="504" y="262">3</text>
+      <text x="696" y="262">4</text>
+      <text x="888" y="262">5</text>
+      <text x="1080" y="262">6</text>
+    </g>
+
+    <g fill="#1c262a" font-size="21" text-anchor="middle">
+      <text x="120" y="156">Authority</text>
+      <text x="120" y="182">defined</text>
+
+      <text x="312" y="156">Canonical</text>
+      <text x="312" y="182">identifier</text>
+
+      <text x="504" y="156">Stewardship</text>
+      <text x="504" y="182">events</text>
+
+      <text x="696" y="156">Selective</text>
+      <text x="696" y="182">disclosure</text>
+
+      <text x="888" y="156">COA</text>
+      <text x="888" y="182">interface</text>
+
+      <text x="1080" y="156">Trust</text>
+      <text x="1080" y="182">compounds</text>
+    </g>
+
+    <text x="600" y="430" text-anchor="middle" fill="#5b676d" font-size="22">Append-only sequence of RA-issued stewardship statements</text>
+  </g>
+</svg>

@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RSA on Zcash: Integrity with Selective Disclosure</title>
+    <meta
+      name="description"
+      content="Why the thesis positions RSA on a shielded public Layer 1 to combine durable ordering and selective disclosure."
+    />
+    <meta property="og:title" content="RSA on Zcash: Integrity with Selective Disclosure" />
+    <meta property="og:description" content="A product-oriented reading of the RSA integrity layer design." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://sras.io/blog/rsa-on-zcash.html" />
+    <link rel="canonical" href="https://sras.io/blog/rsa-on-zcash.html" />
+    <link rel="stylesheet" href="../styles/main.css" />
+    <script type="module" src="../scripts/components.js"></script>
+    <script type="module" src="../scripts/site.js"></script>
+  </head>
+  <body>
+    <site-header current="blog" root="../"></site-header>
+    <main id="main-content" class="reading">
+      <article class="section" data-reveal>
+        <p class="kicker">Blog</p>
+        <h1>RSA on Zcash: Integrity with Selective Disclosure</h1>
+        <p class="lead">
+          The registry problem in artist estates is not solved by storage alone. The thesis proposes RSA as an integrity
+          protocol and argues for a shielded public Layer 1 because verification must remain durable without forcing
+          exposure.
+        </p>
+        <p><time datetime="2026-02-21">February 21, 2026</time></p>
+        <div class="tag-row">
+          <span class="tag">RSA</span>
+          <span class="tag">Zcash</span>
+          <span class="tag">Selective Disclosure</span>
+        </div>
+
+        <h2>From archival storage to registrarial function</h2>
+        <p>
+          Many estate systems already store files: cloud drives, spreadsheets, private databases, catalog drafts,
+          correspondence folders. Yet the same verification work keeps repeating. Why? Because storage does not guarantee
+          independent verifiability under institutional turnover.
+        </p>
+        <p>
+          The thesis reframes this as structural registrarial failure: stewardship claims exist but do not persist as
+          reusable coordination infrastructure. Each interface has to reconstruct confidence from scratch.
+        </p>
+        <p>
+          RSA is introduced to change that condition by preserving issuance and sequence integrity of provenance-relevant
+          stewardship statements.
+        </p>
+
+        <h2>What RSA is and what it refuses to be</h2>
+        <p>
+          Scope discipline is central in Chapter 5. RSA is a narrow layer: append-only, work-level integrity logging for
+          statements that affect attribution, authenticity, edition status, custodial status updates, and revision
+          history. It records who issued what and when, in a tamper-evident order.
+        </p>
+        <p>
+          It explicitly is not a marketplace, not tokenization, not valuation, not ownership adjudication, and not a
+          substitute for scholarship or curatorial judgment. Meaning and legitimacy remain social. RSA stabilizes
+          continuity of claims, not final truth.
+        </p>
+        <p>
+          This boundary protects the design from overreach and category error.
+        </p>
+
+        <h2>Why normal databases are insufficient under entropy</h2>
+        <p>
+          Traditional databases can hold records and signatures. The issue is governance dependency. If one operator
+          controls mutability, then confidence in records remains tied to continuity of that operator. Succession,
+          dispute, or platform failure pushes trust back into question.
+        </p>
+        <p>
+          The thesis highlights this vulnerability through both institutional fragility and digital decay: websites vanish,
+          credentials are lost, budgets change, and link rot degrades practical retrievability. Data once existed, but
+          confidence in sequence and integrity no longer survives independently.
+        </p>
+        <p>
+          So the requirement is durable memory that persists beyond any single institution or administrator.
+        </p>
+
+        <h2>Two simultaneous constraints</h2>
+        <p>
+          Chapter 5.6 states two constraints that must be met together. First, tamper-evident ordering: prior
+          stewardship statements cannot be silently altered or reordered. Second, selective disclosure: verification must
+          be possible without forcing full transparency of sensitive identity and inventory information.
+        </p>
+        <p>
+          Most registry options satisfy one but fail the other. Opaque centralized systems preserve privacy but require
+          blind trust in operators. Over-transparent systems increase legal, security, and market risk, discouraging
+          participation.
+        </p>
+        <p>
+          RSA on a shielded public Layer 1 is proposed as the configuration that satisfies both constraints structurally.
+        </p>
+
+        <h2>Why shielded public Layer 1 matters</h2>
+        <p>
+          The argument is less about crypto ideology and more about institutional survivability. A public base layer
+          reduces dependence on any private platform's continuity. Shielding capabilities support scoped proof rather than
+          involuntary exposure.
+        </p>
+        <p>
+          In this framing, Zcash is treated as infrastructure, not as speculative endpoint. Its relevance comes from the
+          ability to preserve verifiable sequence with privacy-compatible access patterns needed in art-market contexts.
+        </p>
+        <p>
+          The thesis language is precise: privacy is enforced by design, not by omission of records.
+        </p>
+
+        <h2>The lifecycle logic: where adoption enters</h2>
+        <p>
+          RSA's lifecycle runs from explicit authority declaration to canonical identifiers, from accumulated stewardship
+          events to selective disclosure, through COA interface into trust compounding. This sequence matters because it
+          ties technical integrity to real coordination checkpoints.
+        </p>
+        <p>
+          The COA step is especially pragmatic. Instead of asking markets to adopt new ritual objects, it uses a familiar
+          instrument as onboarding interface. The thesis emphasizes that adoption risk is primarily institutional demand,
+          not technical possibility.
+        </p>
+        <p>
+          If insurers, lenders, institutions, and high-integrity intermediaries reward better verification, participation
+          becomes rational.
+        </p>
+
+        <h2>What RSA can and cannot guarantee</h2>
+        <p>
+          RSA can guarantee traceability of what is issued and in what order. It cannot guarantee that every statement is
+          correct. It cannot compel completeness. It cannot settle disputes by protocol fiat. It makes omissions and
+          revisions legible, which improves accountability conditions.
+        </p>
+        <p>
+          This constrained promise is a strength. Overpromising is one reason many "trust" systems fail when exposed to
+          real governance conflict.
+        </p>
+        <p>
+          In the thesis model, correctness remains evidentiary and social; integrity remains infrastructural.
+        </p>
+
+        <h2>Why this is counter-entropic</h2>
+        <p>
+          A system is counter-entropic in this thesis if its outputs lower future coordination costs. RSA does that when
+          each stewardship event becomes reusable verification substrate. Due diligence effort declines on the margin,
+          rather than restarting from zero per interaction.
+        </p>
+        <p>
+          This is the operational claim behind "trust compounds instead of resetting." It is not metaphysical trust. It is
+          reduced workload for credible verification under turnover and dispute.
+        </p>
+
+        <h2>Implementation discipline: keep layers separate</h2>
+        <p>
+          One recurring failure mode in registry projects is collapsing integrity, context, and legitimacy into a single
+          technical claim. Chapter 5 avoids that by separating layers: integrity log, dossier/catalogue context, and field
+          recognition. In practical terms, that means product decisions should avoid implying that protocol history alone
+          resolves scholarly, curatorial, or legal disputes.
+        </p>
+        <p>
+          Layer separation also improves governance under revision. When new evidence appears, the system can preserve
+          issuance chronology while supporting transparent amendments and contestable interpretation. That balance is a
+          direct adoption enabler in environments where procedural traceability and corrigibility are as important as data
+          availability.
+        </p>
+
+        <h2>Key takeaways</h2>
+        <ul>
+          <li>RSA addresses a registrarial failure: verification work not becoming durable infrastructure.</li>
+          <li>Its scope is intentionally narrow: integrity of stewardship sequence, not social meaning or legal finality.</li>
+          <li>The design requires both tamper-evident ordering and selective disclosure.</li>
+          <li>Zcash is used as shielded public Layer 1 infrastructure, not as market narrative.</li>
+          <li>The counter-entropic property is marginal reduction of future coordination burden.</li>
+        </ul>
+
+        <h2>From the thesis</h2>
+        <ul>
+          <li>Chapter 5.3-5.5: Registry problem framing and strict "is / is not" scope boundaries.</li>
+          <li>Chapter 5.6: Why blockchain, why Layer 1, and why Zcash under dual constraints.</li>
+          <li>Chapter 5.7: Six-stage lifecycle from authority to compounding trust.</li>
+          <li>Chapter 5.8: Transition from technical integrity to collective legitimacy requirements.</li>
+        </ul>
+      </article>
+    </main>
+    <site-footer root="../"></site-footer>
+  </body>
+</html>

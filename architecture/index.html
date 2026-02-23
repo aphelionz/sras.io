@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Architecture | Registry of Shielded Artworks</title>
+    <meta
+      name="description"
+      content="How the thesis architecture works: mechanisms, coordination tax, RSA integrity layer, ALMA adoption layer, and stabilization vs revaluation."
+    />
+    <meta property="og:title" content="Architecture | Registry of Shielded Artworks" />
+    <meta property="og:description" content="From entropy to regeneration in a two-layer architecture." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://sras.io/architecture/" />
+    <link rel="canonical" href="https://sras.io/architecture/" />
+    <link rel="stylesheet" href="../styles/main.css" />
+    <script type="module" src="../scripts/components.js"></script>
+    <script type="module" src="../scripts/site.js"></script>
+  </head>
+  <body>
+    <site-header current="architecture" root="../"></site-header>
+    <main id="main-content">
+      <section class="hero" data-reveal>
+        <div>
+          <p class="kicker">System Design</p>
+          <h1>From entropy to regeneration</h1>
+          <p>
+            The architecture separates diagnosis from response: mechanisms produce coordination tax and drift; RSA and
+            ALMA are designed to reverse that dynamic structurally.
+          </p>
+        </div>
+        <figure class="diagram">
+          <img src="../assets/entropy-regeneration-flow.svg" alt="Entropy to regeneration architecture flow chart" />
+          <figcaption>Mechanisms, friction, and architecture in one view.</figcaption>
+        </figure>
+      </section>
+
+      <section class="section" data-reveal>
+        <h2>Mechanisms → coordination tax → system drift</h2>
+        <div class="card-grid">
+          <article class="card">
+            <h3>Mechanisms</h3>
+            <p>Narrative exclusion, institutional fragility, market opacity, fragmented governance.</p>
+          </article>
+          <article class="card">
+            <h3>Tax</h3>
+            <p>Verification burden and risk premiums rise as shared references fail to persist.</p>
+          </article>
+          <article class="card">
+            <h3>Drift</h3>
+            <p>Participation drops, trust resets, and coherence erodes across academia, institutions, and markets.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" data-reveal>
+        <h2>Two-part architecture</h2>
+        <div class="card-grid">
+          <article class="card">
+            <h3>Integrity layer: RSA</h3>
+            <p>Append-only stewardship continuity with selective disclosure and reusable verification.</p>
+          </article>
+          <article class="card">
+            <h3>Adoption layer: ALMA</h3>
+            <p>Polycentric coordination that diffuses procedural standards and aligns incentives.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" data-reveal>
+        <callout-card title="Stabilization versus revaluation" tone="warning">
+          <p>
+            The thesis separates objectives: architecture targets stabilization first (coherence, verification, legitimacy).
+            Revaluation is treated as emergent and contingent, not the primary design target.
+          </p>
+        </callout-card>
+      </section>
+
+      <section class="section" data-reveal>
+        <h2>Educational model: coordination tax slider</h2>
+        <div class="slider-panel">
+          <p class="metric">
+            Coordination tax index: <strong id="coordination-tax-value">0</strong> / 100
+            <span id="coordination-tax-state">Low friction</span>
+          </p>
+          <label for="coordination-tax-slider">Move from low to high verification burden</label>
+          <input type="range" min="0" max="100" value="20" id="coordination-tax-slider" />
+          <ul class="breakpoints" aria-live="polite">
+            <li data-threshold="1"><strong>Stage 1:</strong> Scholarship coordination remains feasible.</li>
+            <li data-threshold="2"><strong>Stage 2:</strong> Institutional diligence begins to slow.</li>
+            <li data-threshold="3"><strong>Stage 3:</strong> Insurer and lender confidence weakens.</li>
+            <li data-threshold="4"><strong>Stage 4:</strong> Market legibility breaks and drift accelerates.</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+    <site-footer root="../"></site-footer>
+  </body>
+</html>

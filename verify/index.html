@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Verify (Placeholder) | Registry of Shielded Artworks</title>
+    <meta
+      name="description"
+      content="UI placeholder for future selective verification flows. No cryptography, no network calls, no key handling."
+    />
+    <meta property="og:title" content="Verify (Placeholder) | Registry of Shielded Artworks" />
+    <meta property="og:description" content="Demonstration-only verifier UI." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sras.io/verify/" />
+    <link rel="canonical" href="https://sras.io/verify/" />
+    <link rel="stylesheet" href="../styles/main.css" />
+    <script type="module" src="../scripts/components.js"></script>
+    <script type="module" src="../scripts/site.js"></script>
+  </head>
+  <body>
+    <site-header current="verify" root="../"></site-header>
+    <main id="main-content" class="reading">
+      <section class="section" data-reveal>
+        <p class="kicker">Placeholder</p>
+        <h1>Verify stewardship record (UI stub)</h1>
+        <p class="lead">
+          This page demonstrates form flow only. It does not perform cryptography, does not transmit data, and does not
+          validate chain state.
+        </p>
+        <callout-card title="Security note" tone="warning">
+          <p>Do not paste real keys; this demo performs no cryptography and sends nothing anywhere.</p>
+        </callout-card>
+      </section>
+
+      <section class="section" data-reveal>
+        <form id="verify-form" novalidate>
+          <div class="input-group">
+            <label for="zcash-address">Zcash diversified address</label>
+            <input
+              id="zcash-address"
+              name="zcash-address"
+              type="text"
+              autocomplete="off"
+              placeholder="u1... or zs... (demo input)"
+              required
+            />
+            <p class="form-help">UX-only heuristic: should start with <code>u</code> or <code>zs</code>.</p>
+            <p id="address-error" class="form-error" aria-live="polite"></p>
+          </div>
+
+          <div class="input-group">
+            <label for="viewing-key">Viewing key</label>
+            <textarea
+              id="viewing-key"
+              name="viewing-key"
+              autocomplete="off"
+              placeholder="Paste a demo key-like string"
+              required
+            ></textarea>
+            <p class="form-help">This UI checks only minimum length for demonstration.</p>
+            <p id="key-error" class="form-error" aria-live="polite"></p>
+          </div>
+
+          <button type="submit" class="button">Verify</button>
+        </form>
+
+        <section id="verify-result" class="result-panel" hidden aria-live="polite"></section>
+      </section>
+    </main>
+    <site-footer root="../"></site-footer>
+  </body>
+</html>

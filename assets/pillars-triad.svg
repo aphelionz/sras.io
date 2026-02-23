@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 420" role="img" aria-labelledby="title desc">
+  <title id="title">Three stewardship pillars</title>
+  <desc id="desc">Three linked pillars for academia, institutions, and markets around shared verification infrastructure.</desc>
+  <rect width="1040" height="420" fill="#f4f2ee" rx="22"/>
+
+  <g font-family="Arial, sans-serif">
+    <rect x="70" y="80" width="260" height="260" rx="18" fill="#fff" stroke="#c8c5bf"/>
+    <text x="200" y="140" text-anchor="middle" font-size="31" fill="#2a2d2f">Academia</text>
+    <text x="200" y="180" text-anchor="middle" font-size="21" fill="#596066">Narrative persistence</text>
+    <text x="200" y="214" text-anchor="middle" font-size="21" fill="#596066">Citation stability</text>
+
+    <rect x="390" y="80" width="260" height="260" rx="18" fill="#fff" stroke="#c8c5bf"/>
+    <text x="520" y="140" text-anchor="middle" font-size="31" fill="#2a2d2f">Institutions</text>
+    <text x="520" y="180" text-anchor="middle" font-size="21" fill="#596066">Custody confidence</text>
+    <text x="520" y="214" text-anchor="middle" font-size="21" fill="#596066">Loan diligence</text>
+
+    <rect x="710" y="80" width="260" height="260" rx="18" fill="#fff" stroke="#c8c5bf"/>
+    <text x="840" y="140" text-anchor="middle" font-size="31" fill="#2a2d2f">Markets</text>
+    <text x="840" y="180" text-anchor="middle" font-size="21" fill="#596066">Legibility</text>
+    <text x="840" y="214" text-anchor="middle" font-size="21" fill="#596066">Risk reduction</text>
+
+    <path d="M330 210 H390" stroke="#7f8a90" stroke-width="4"/>
+    <path d="M650 210 H710" stroke="#7f8a90" stroke-width="4"/>
+
+    <text x="520" y="298" text-anchor="middle" font-size="20" fill="#4d565c">Shared integrity and governance architecture</text>
+  </g>
+</svg>

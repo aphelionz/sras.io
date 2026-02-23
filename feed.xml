@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Registry of Shielded Artworks Blog</title>
+    <link>https://sras.io/blog/</link>
+    <description>Thesis-derived essays on cultural entropy, regenerative architecture, RSA, and ALMA.</description>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 23 Feb 2026 12:00:00 GMT</lastBuildDate>
+
+    <item>
+      <title>Cultural Entropy: Why Artist Legacies Decay by Default</title>
+      <link>https://sras.io/blog/cultural-entropy.html</link>
+      <guid>https://sras.io/blog/cultural-entropy.html</guid>
+      <pubDate>Mon, 23 Feb 2026 09:00:00 GMT</pubDate>
+      <description>Why posthumous drift is structural and why persistence requires designed coordination systems.</description>
+    </item>
+
+    <item>
+      <title>The Coordination Tax: Verification Costs as Hidden Devaluation</title>
+      <link>https://sras.io/blog/coordination-tax.html</link>
+      <guid>https://sras.io/blog/coordination-tax.html</guid>
+      <pubDate>Mon, 23 Feb 2026 08:00:00 GMT</pubDate>
+      <description>How verification burden compounds across institutions, scholarship, and markets.</description>
+    </item>
+
+    <item>
+      <title>From Advocacy to Architecture: Designing for Persistence</title>
+      <link>https://sras.io/blog/architecture-not-advocacy.html</link>
+      <guid>https://sras.io/blog/architecture-not-advocacy.html</guid>
+      <pubDate>Sun, 22 Feb 2026 10:00:00 GMT</pubDate>
+      <description>Why durable process design matters more than episodic attention campaigns.</description>
+    </item>
+
+    <item>
+      <title>A Boundary-Condition Case: The ERL Estate Under Maximal Constraint</title>
+      <link>https://sras.io/blog/erl-stress-test.html</link>
+      <guid>https://sras.io/blog/erl-stress-test.html</guid>
+      <pubDate>Sun, 22 Feb 2026 08:00:00 GMT</pubDate>
+      <description>What a worst-case estate configuration reveals about design feasibility and limits.</description>
+    </item>
+
+    <item>
+      <title>RSA on Zcash: Integrity with Selective Disclosure</title>
+      <link>https://sras.io/blog/rsa-on-zcash.html</link>
+      <guid>https://sras.io/blog/rsa-on-zcash.html</guid>
+      <pubDate>Sat, 21 Feb 2026 10:00:00 GMT</pubDate>
+      <description>Why shielded Layer 1 infrastructure is framed as a stewardship integrity substrate.</description>
+    </item>
+
+    <item>
+      <title>ALMA and Polycentric Governance: Adoption Without Centralization</title>
+      <link>https://sras.io/blog/polycentric-alma.html</link>
+      <guid>https://sras.io/blog/polycentric-alma.html</guid>
+      <pubDate>Sat, 21 Feb 2026 08:00:00 GMT</pubDate>
+      <description>How polycentric coordination enables standards diffusion while preserving estate sovereignty.</description>
+    </item>
+  </channel>
+</rss>

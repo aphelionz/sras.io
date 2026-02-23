@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" role="img" aria-labelledby="title desc">
+  <title id="title">ALMA polycentric layers</title>
+  <desc id="desc">Concentric rings for micro estates, meso associations, and macro ALMA coordination.</desc>
+  <rect width="900" height="620" fill="#f3f4f8" rx="28"/>
+
+  <g transform="translate(450 310)" font-family="Arial, sans-serif" text-anchor="middle">
+    <circle r="250" fill="#d9e7f6" stroke="#8da9c8" stroke-width="2"/>
+    <circle r="170" fill="#e6efdc" stroke="#9db28c" stroke-width="2"/>
+    <circle r="90" fill="#fdf3d6" stroke="#ccb375" stroke-width="2"/>
+
+    <text y="-190" font-size="28" fill="#304d73" font-weight="700">Macro Layer</text>
+    <text y="-158" font-size="21" fill="#395778">ALMA continental coordination</text>
+
+    <text y="-114" font-size="25" fill="#435d3c" font-weight="700">Meso Layer</text>
+    <text y="-86" font-size="19" fill="#4c6844">National legacy associations</text>
+
+    <text y="-44" font-size="23" fill="#6a5722" font-weight="700">Micro Layer</text>
+    <text y="-20" font-size="18" fill="#745f24">Individual estates</text>
+
+    <text y="26" font-size="18" fill="#3f474d">Procedural interoperability</text>
+    <text y="52" font-size="18" fill="#3f474d">without centralization</text>
+  </g>
+</svg>

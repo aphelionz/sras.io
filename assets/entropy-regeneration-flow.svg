@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
+  <title id="title">From entropy to regeneration flow</title>
+  <desc id="desc">A flow from four failure mechanisms to coordination tax and then to RSA plus ALMA regenerative response.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#f6f5f1"/>
+      <stop offset="100%" stop-color="#e9efe9"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4e5a60"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="420" fill="url(#bg)" rx="28"/>
+
+  <rect x="36" y="54" width="240" height="72" rx="14" fill="#fff" stroke="#c7ccd0"/>
+  <text x="56" y="93" font-size="24" fill="#1e2226" font-family="Arial, sans-serif">Narrative exclusion</text>
+
+  <rect x="36" y="142" width="240" height="72" rx="14" fill="#fff" stroke="#c7ccd0"/>
+  <text x="56" y="181" font-size="24" fill="#1e2226" font-family="Arial, sans-serif">Institutional fragility</text>
+
+  <rect x="36" y="230" width="240" height="72" rx="14" fill="#fff" stroke="#c7ccd0"/>
+  <text x="56" y="269" font-size="24" fill="#1e2226" font-family="Arial, sans-serif">Market opacity</text>
+
+  <rect x="36" y="318" width="240" height="72" rx="14" fill="#fff" stroke="#c7ccd0"/>
+  <text x="56" y="357" font-size="24" fill="#1e2226" font-family="Arial, sans-serif">Fragmented governance</text>
+
+  <path d="M300 210 H468" stroke="#4e5a60" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <rect x="488" y="140" width="250" height="140" rx="18" fill="#ffffff" stroke="#b9c2c8" stroke-width="2"/>
+  <text x="518" y="190" font-size="26" fill="#182022" font-family="Arial, sans-serif">Coordination Tax</text>
+  <text x="518" y="228" font-size="20" fill="#5a6369" font-family="Arial, sans-serif">Verification resets</text>
+
+  <path d="M752 210 H892" stroke="#4e5a60" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <rect x="912" y="84" width="250" height="110" rx="16" fill="#dceee9" stroke="#67a99f"/>
+  <text x="942" y="132" font-size="28" fill="#0f4f48" font-family="Arial, sans-serif">RSA</text>
+  <text x="942" y="162" font-size="20" fill="#25665f" font-family="Arial, sans-serif">Integrity layer</text>
+
+  <rect x="912" y="226" width="250" height="110" rx="16" fill="#e5ebf6" stroke="#7290c5"/>
+  <text x="942" y="274" font-size="28" fill="#1f3f71" font-family="Arial, sans-serif">ALMA</text>
+  <text x="942" y="304" font-size="20" fill="#365986" font-family="Arial, sans-serif">Polycentric adoption</text>
+
+  <text x="36" y="36" font-size="20" fill="#5a6369" font-family="Arial, sans-serif">Structural drift</text>
+  <text x="912" y="36" font-size="20" fill="#5a6369" font-family="Arial, sans-serif">Regenerative architecture</text>
+</svg>
