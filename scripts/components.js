@@ -4,6 +4,7 @@ const NAV_ITEMS = [
   { key: "rsa", label: "RSA", href: "rsa/index.html" },
   { key: "alma", label: "ALMA", href: "alma/index.html" },
   { key: "architecture", label: "Architecture", href: "architecture/index.html" },
+  { key: "specs", label: "Specs", href: "specs/index.html" },
   { key: "use-cases", label: "Use Cases", href: "use-cases/index.html" },
   { key: "blog", label: "Blog", href: "blog/index.html" },
   { key: "verify", label: "Verify", href: "verify/index.html" }

@@ -5,7 +5,31 @@
     <link>https://sras.io/blog/</link>
     <description>Thesis-derived essays on cultural entropy, regenerative architecture, RSA, and ALMA.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 23 Feb 2026 12:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 03 Mar 2026 12:00:00 GMT</lastBuildDate>
+
+    <item>
+      <title>Introducing ZIP-SRA-KEYGEN: How a Registry Authority Is Born</title>
+      <link>https://sras.io/blog/zip-keygen.html</link>
+      <guid>https://sras.io/blog/zip-keygen.html</guid>
+      <pubDate>Tue, 03 Mar 2026 10:00:00 GMT</pubDate>
+      <description>How FROST threshold signing and real-world bindings create a cryptographic identity that survives succession.</description>
+    </item>
+
+    <item>
+      <title>Introducing ZIP-SRA-EVENTS: Chain-of-Custody as Append-Only Record</title>
+      <link>https://sras.io/blog/zip-events.html</link>
+      <guid>https://sras.io/blog/zip-events.html</guid>
+      <pubDate>Tue, 03 Mar 2026 09:00:00 GMT</pubDate>
+      <description>Six event types, Lamport clocks, and a non-binary evidentiary taxonomy for real-world asset registries.</description>
+    </item>
+
+    <item>
+      <title>Introducing ZIP-SRA-DISCLOSURE: Privacy Without Disclosure Is a Vault Without a Door</title>
+      <link>https://sras.io/blog/zip-disclosure.html</link>
+      <guid>https://sras.io/blog/zip-disclosure.html</guid>
+      <pubDate>Tue, 03 Mar 2026 08:00:00 GMT</pubDate>
+      <description>Disclosure packages, verifier roles, dossier tiers, and how verification labor compounds.</description>
+    </item>
 
     <item>
       <title>Cultural Entropy: Why Artist Legacies Decay by Default</title>

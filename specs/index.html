@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Specifications | Registry of Shielded Artworks</title>
+    <meta
+      name="description"
+      content="ZIP specifications for the Shielded Registry Assets protocol: key ceremony, chain-of-custody events, and selective disclosure workflows."
+    />
+    <meta property="og:title" content="Specifications | Registry of Shielded Artworks" />
+    <meta property="og:description" content="Three ZIPs define the SRA protocol: authority lifecycle, event logging, and selective disclosure." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sras.io/specs/" />
+    <link rel="canonical" href="https://sras.io/specs/" />
+    <link rel="stylesheet" href="../styles/main.css" />
+    <script type="module" src="../scripts/components.js"></script>
+    <script type="module" src="../scripts/site.js"></script>
+  </head>
+  <body>
+    <site-header current="specs" root="../"></site-header>
+    <main id="main-content">
+      <section class="hero" data-reveal>
+        <div>
+          <p class="kicker">Protocol Specifications</p>
+          <h1>SRA protocol ZIPs</h1>
+          <p>
+            Three specifications define the SRA protocol: authority lifecycle, chain-of-custody logging, and selective
+            disclosure. Together they operationalize the architecture described in the thesis.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" data-reveal>
+        <div class="card-grid">
+          <article class="card">
+            <div class="tag-row"><span class="tag">Draft</span><span class="tag">Standards</span></div>
+            <h2><a href="keygen/index.html">ZIP-SRA-KEYGEN</a></h2>
+            <h3>Authority Key Ceremony</h3>
+            <p>
+              FROST threshold signing, Genesis Declaration, real-world bindings, key rotation, and emergency revocation.
+              Defines how a Registry Authority constitutes itself as a cryptographic identity.
+            </p>
+            <div class="button-row">
+              <a class="button secondary" href="keygen/index.html">Read spec</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="tag-row"><span class="tag">Draft</span><span class="tag">Standards</span></div>
+            <h2><a href="events/index.html">ZIP-SRA-EVENTS</a></h2>
+            <h3>Chain-of-Custody Logs</h3>
+            <p>
+              Six event types, Canonical Artwork IDs, Lamport clocks, hash chains, and a non-binary evidentiary
+              taxonomy. Defines per-asset append-only event logs anchored in Zcash's Orchard shielded pool.
+            </p>
+            <div class="button-row">
+              <a class="button secondary" href="events/index.html">Read spec</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="tag-row"><span class="tag">Draft</span><span class="tag">Standards</span></div>
+            <h2><a href="disclosure/index.html">ZIP-SRA-DISCLOSURE</a></h2>
+            <h3>Selective Disclosure Workflows</h3>
+            <p>
+              Disclosure packages, verifier roles, dossier tiers, verification reports, and disclosure lifecycle
+              management. Defines how viewing keys are shared with purpose and accountability.
+            </p>
+            <div class="button-row">
+              <a class="button secondary" href="disclosure/index.html">Read spec</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" data-reveal>
+        <callout-card title="Draft status" tone="warning">
+          <p>
+            These specifications are drafts published for community review. They are subject to change and have not yet
+            been assigned ZIP numbers. Feedback is welcome via the discussion links in each specification.
+          </p>
+        </callout-card>
+      </section>
+
+      <section class="section" data-reveal>
+        <h2>How the specs relate</h2>
+        <ol class="timeline">
+          <li>
+            <h3>KEYGEN: establish authority</h3>
+            <p>A Registry Authority runs a FROST key ceremony and publishes a Genesis Declaration, creating the cryptographic identity that anchors all subsequent operations.</p>
+          </li>
+          <li>
+            <h3>EVENTS: record stewardship</h3>
+            <p>Using the key material from KEYGEN, the RA logs registration, transfer, status, revision, dispute, and dossier events per artwork in the shielded pool.</p>
+          </li>
+          <li>
+            <h3>DISCLOSURE: share selectively</h3>
+            <p>The RA packages per-asset viewing keys with contextual metadata and transmits them to verifiers, making the shielded record legible without exposing the full registry.</p>
+          </li>
+        </ol>
+      </section>
+    </main>
+    <site-footer root="../"></site-footer>
+  </body>
+</html>

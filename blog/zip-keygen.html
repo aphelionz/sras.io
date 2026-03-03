@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Introducing ZIP-SRA-KEYGEN: How a Registry Authority Is Born</title>
+    <meta
+      name="description"
+      content="Why continuity of signing authority matters more than any individual signer, and how FROST threshold signing creates a cryptographic identity that survives succession."
+    />
+    <meta property="og:title" content="Introducing ZIP-SRA-KEYGEN: How a Registry Authority Is Born" />
+    <meta property="og:description" content="FROST threshold signing, Genesis Declarations, and real-world bindings for Registry Authorities." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://sras.io/blog/zip-keygen.html" />
+    <link rel="canonical" href="https://sras.io/blog/zip-keygen.html" />
+    <link rel="stylesheet" href="../styles/main.css" />
+    <script type="module" src="../scripts/components.js"></script>
+    <script type="module" src="../scripts/site.js"></script>
+  </head>
+  <body>
+    <site-header current="blog" root="../"></site-header>
+    <main id="main-content" class="reading">
+      <article class="section" data-reveal>
+        <p class="kicker">Blog</p>
+        <h1>Introducing ZIP-SRA-KEYGEN: How a Registry Authority Is Born</h1>
+        <p class="lead">
+          A registry is only as durable as the signing authority behind it. ZIP-SRA-KEYGEN specifies how a Registry
+          Authority constitutes itself as a cryptographic identity that survives succession, dispute, and institutional
+          turnover -- without leaking governance structure to verifiers.
+        </p>
+        <p><time datetime="2026-03-03">March 3, 2026</time></p>
+        <div class="tag-row">
+          <span class="tag">ZIP</span>
+          <span class="tag">FROST</span>
+          <span class="tag">Key Ceremony</span>
+        </div>
+
+        <h2>The single-point-of-failure problem</h2>
+        <p>
+          The Chain-of-Custody Logs specification (ZIP-SRA-EVENTS) assumes the existence of a signing keypair. It does
+          not say who holds it, how it was generated, or what happens when that person dies. This is not a documentation
+          gap -- it is a structural vulnerability. If one person holds the signing key, the registry inherits every
+          fragility the SRA architecture was designed to resist: key-person risk, succession discontinuity, and
+          single-point compromise.
+        </p>
+        <p>
+          An estate manager who holds the sole signing key <em>is</em> the registry. If they are incapacitated, the
+          registry's ability to issue new events ceases. The thesis principle is non-negotiable: continuity cannot depend
+          on the uninterrupted virtue or competence of a specific individual.
+        </p>
+
+        <h2>Why threshold signing</h2>
+        <p>
+          The specification uses FROST (Flexible Round-Optimized Schnorr Threshold) Ed25519 threshold signing. FROST
+          distributes the signing secret among N participants such that any M of them can cooperate to produce a valid
+          signature. The critical property: the resulting signature is a standard Ed25519 signature, indistinguishable
+          from one produced by a single signer.
+        </p>
+        <p>
+          This means verifiers see a single public key and validate a single signature. They never learn how many
+          participants exist, who they are, or what the threshold is. The governance structure stays private behind the
+          signing ceremony; the verification interface remains simple.
+        </p>
+        <p>
+          For a small estate, the recommended configuration is 2-of-3: one share on the primary steward's operational
+          device, one in cold storage at a separate location, and one held by a designated recovery holder such as legal
+          counsel or an ALMA delegate.
+        </p>
+
+        <h2>The Genesis Declaration as constitutional event</h2>
+        <p>
+          Once key material exists, the RA must anchor its identity on-chain. The Genesis Declaration is the
+          constitutional moment: a shielded memo containing the RA's public key, a human-readable scope declaration
+          (e.g. "Official registry for the oeuvre of Emilio Rodriguez-Larrain"), a hash of the governance charter, and
+          initial real-world bindings.
+        </p>
+        <p>
+          Until a Genesis Declaration is published, no valid SRA events can exist for this RA. After it is published,
+          verifiers can trace every subsequent event back to this anchor. The Genesis Declaration also commits to the
+          FROST threshold parameters (informational, not consensus-enforced), so that future auditors can understand the
+          design intent of the signing structure.
+        </p>
+
+        <h2>Real-world bindings bridge the gap</h2>
+        <p>
+          A public key alone proves nothing about institutional identity. PK_R shows that someone signed something -- it
+          does not show that the signer is the legitimate steward of an artist's estate. Real-world bindings create
+          verifiable, bidirectional linkages between the on-chain cryptographic identity and off-chain institutional
+          identity.
+        </p>
+        <p>
+          The specification defines four binding types: DNS TXT records that point from a domain to PK_R, legal
+          attestations (notarized documents hashed and committed on-chain), well-known URI endpoints serving
+          machine-readable metadata, and third-party attestations from recognized verifiers like ALMA. These are
+          composable and incremental -- an estate can start with a DNS binding and add legal or institutional
+          attestations over time.
+        </p>
+        <p>
+          Bindings are advisory, not consensus-critical. The Zcash network does not evaluate off-chain state. A verifier
+          who checks both directions -- chain commits to domain, domain commits to chain -- gains confidence from mutual
+          consistency. This is the same verification pattern used by DKIM for email authentication.
+        </p>
+
+        <h2>Key rotation under succession</h2>
+        <p>
+          People leave, governance structures change, proactive cryptographic hygiene demands periodic rotation. The
+          specification defines a Key Rotation Event co-signed by both the outgoing and incoming keys, establishing
+          continuity. After an effective block height, only the new key is authoritative for new events. Historical
+          events signed by the old key remain valid.
+        </p>
+        <p>
+          Rotation reason codes make the transition legible: SUCCESSION (death or incapacity), GOVERNANCE
+          (restructuring), SECURITY (suspected exposure), or SCHEDULED (routine rotation). This transparency converts
+          what would otherwise be an opaque administrative event into an auditable lifecycle signal.
+        </p>
+
+        <h2>Emergency revocation as adversarial resilience</h2>
+        <p>
+          Key rotation is planned. Emergency revocation is adversarial. When the signing key is confirmed or strongly
+          suspected compromised, the RA activates a pre-committed recovery keypair -- generated during the original
+          ceremony, held in cold custody with a different participant set. The recovery key anchors a revocation event
+          that invalidates the compromised key after a specified block height.
+        </p>
+        <p>
+          Between revocation and the anchoring of a new key, the registry enters a suspended state: existing events
+          remain valid, but no new events can be issued. This brief interruption is an intentional design choice -- a
+          pause in issuance is preferable to the silent acceptance of forged events.
+        </p>
+
+        <h2>What this changes for estate planning</h2>
+        <p>
+          KEYGEN transforms the RA from a person into a protocol. The estate's cryptographic identity no longer depends
+          on any individual's continued availability. Shares can be redistributed across generations. Recovery paths can
+          be pre-committed before they are needed. Bindings can strengthen incrementally as the estate's institutional
+          relationships mature.
+        </p>
+        <p>
+          The specification also includes a cryptographic agility hook: the version field in all payloads enables
+          future migration to post-quantum signature schemes without breaking the historical chain. A registry designed
+          for multi-generational timescales must anticipate the eventual obsolescence of any specific cryptographic
+          primitive.
+        </p>
+
+        <h2>Key takeaways</h2>
+        <ul>
+          <li>FROST threshold signing eliminates single-point-of-failure key custody while preserving simple Ed25519 verification.</li>
+          <li>The Genesis Declaration is a constitutional on-chain event that anchors the RA's identity, scope, and governance intent.</li>
+          <li>Real-world bindings create bidirectional, composable linkages between cryptographic and institutional identity.</li>
+          <li>Key rotation preserves event log continuity across governance transitions and succession events.</li>
+          <li>Emergency revocation provides adversarial resilience through a pre-committed, cold-stored recovery path.</li>
+          <li>Bindings are advisory and incremental -- confidence accrues over time without requiring upfront completeness.</li>
+        </ul>
+
+        <h2>Read the full specification</h2>
+        <ul>
+          <li><a href="../specs/keygen/index.html">ZIP-SRA-KEYGEN: Shielded Registry Authority Key Ceremony</a></li>
+        </ul>
+      </article>
+    </main>
+    <site-footer root="../"></site-footer>
+  </body>
+</html>

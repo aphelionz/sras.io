@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Introducing ZIP-SRA-DISCLOSURE: Privacy Without Disclosure Is a Vault Without a Door</title>
+    <meta
+      name="description"
+      content="How structured selective disclosure transforms verification from a repeated private expense into cumulative infrastructure."
+    />
+    <meta property="og:title" content="Introducing ZIP-SRA-DISCLOSURE: Privacy Without Disclosure Is a Vault Without a Door" />
+    <meta property="og:description" content="Disclosure packages, verifier roles, dossier tiers, and how verification labor compounds." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://sras.io/blog/zip-disclosure.html" />
+    <link rel="canonical" href="https://sras.io/blog/zip-disclosure.html" />
+    <link rel="stylesheet" href="../styles/main.css" />
+    <script type="module" src="../scripts/components.js"></script>
+    <script type="module" src="../scripts/site.js"></script>
+  </head>
+  <body>
+    <site-header current="blog" root="../"></site-header>
+    <main id="main-content" class="reading">
+      <article class="section" data-reveal>
+        <p class="kicker">Blog</p>
+        <h1>Introducing ZIP-SRA-DISCLOSURE: Privacy Without Disclosure Is a Vault Without a Door</h1>
+        <p class="lead">
+          The SRA achieves privacy by default through Zcash's shielded pool. But privacy without a structured path to
+          disclosure reproduces the very reset dynamic the architecture was designed to eliminate. ZIP-SRA-DISCLOSURE
+          provides the structure.
+        </p>
+        <p><time datetime="2026-03-03">March 3, 2026</time></p>
+        <div class="tag-row">
+          <span class="tag">ZIP</span>
+          <span class="tag">Selective Disclosure</span>
+          <span class="tag">Verification</span>
+        </div>
+
+        <h2>The disclosure problem</h2>
+        <p>
+          ZIP-SRA-EVENTS defines how events are recorded on-chain. ZIP-SRA-KEYGEN defines how the RA constitutes its
+          cryptographic identity. What remains is the question of how the RA opens windows into the shielded record --
+          how it shares viewing keys with the parties who need them, in a way that is deliberate, auditable, and
+          calibrated to purpose.
+        </p>
+        <p>
+          If disclosure is ad hoc -- communicated through emails, PDF attachments, verbal assurances -- then the SRA
+          reproduces the exact information fragmentation it was designed to eliminate. A viewing key transmitted without
+          context, without stated purpose, and without an auditable record is only marginally better than a PDF
+          certificate.
+        </p>
+
+        <h2>Disclosure packages: what a verifier receives</h2>
+        <p>
+          A Disclosure Package is the atomic unit of selective disclosure. It is a signed JSON object containing: the
+          RA's public key and real-world bindings (so the verifier can validate institutional identity), the per-asset
+          viewing key and summary metadata (so the verifier can scan the chain), and disclosure metadata including the
+          stated purpose, verifier role, dossier tier, and any conditions.
+        </p>
+        <p>
+          The package is signed by the RA using the same FROST threshold key that signs on-chain events. A verifier who
+          receives a signed Disclosure Package can confirm that it was produced by the same authority whose events appear
+          on-chain. The package also includes an advisory expiry -- a social contract, not a technical control, since
+          viewing keys cannot be revoked.
+        </p>
+
+        <h2>Ten verifier roles and calibrated access</h2>
+        <p>
+          Different parties interact with the registry for different reasons. A prospective buyer needs provenance
+          continuity and title clarity. An insurer needs condition history, valuation, and theft status. A scholar needs
+          exhibition history and attribution evidence. A museum registrar needs all of the above for loan processing.
+        </p>
+        <p>
+          The specification defines ten standardized roles: BUYER, CONSIGNOR, INSURER, LENDER, MUSEUM, SCHOLAR,
+          CONSERVATOR, LEGAL, ALMA, and OTHER. These roles are advisory -- the RA assigns them based on its own
+          judgment -- but they promote consistency across registries and enable future automated disclosure policies.
+        </p>
+
+        <h2>Four dossier tiers: from chain-only to full</h2>
+        <p>
+          The on-chain integrity chain is the same for all verifiers. What varies is the depth of off-chain documentary
+          evidence the RA shares alongside it. The specification defines four tiers: CHAIN_ONLY (viewing key only, no
+          supporting documents), SUMMARY (basic provenance outline, thumbnails, key dates), STANDARD (full provenance
+          chain, exhibition history, full-resolution photography, conservation summary), and FULL (everything in
+          STANDARD plus insurance valuations, expert opinions, confidential correspondence).
+        </p>
+        <p>
+          The art market operates on graduated trust. A preliminary inquiry does not warrant full financial disclosure.
+          A scholarly inquiry does not require insurance valuations. An insurer assessing risk, however, needs
+          everything. Tiered disclosure calibrates information flow to the verifier's actual need.
+        </p>
+
+        <h2>Irrevocability and its consequences</h2>
+        <p>
+          A viewing key, once transmitted, cannot be technically revoked. This is a fundamental property of Zcash's
+          cryptographic design. The specification addresses this irrevocability through social and institutional
+          mechanisms: advisory expiry dates, contractual non-redistribution clauses, and the Disclosure Ledger --
+          the RA's off-chain record of every disclosure grant.
+        </p>
+        <p>
+          If a viewing key is leaked or redistributed beyond its intended audience, the RA's ultimate recourse is
+          Seed_RA rotation (specified in ZIP-SRA-KEYGEN), which re-derives all per-asset keys and invalidates all
+          outstanding Disclosure Packages. This is an extreme measure reserved for systemic compromise. The
+          specification is honest about this constraint: advisory expiry communicates the RA's expectations without
+          pretending to enforce them technically.
+        </p>
+
+        <h2>How verification reports compound</h2>
+        <p>
+          After scanning the chain and reviewing documentation, a verifier may produce a structured Verification Report
+          summarizing their findings: events verified, hash chain validity, signature validity, open disputes, and an
+          overall integrity assessment (CONSISTENT, ANOMALOUS, or INCOMPLETE).
+        </p>
+        <p>
+          A signed Verification Report from one verifier can be presented to another party as evidence that independent
+          verification was performed. This is the mechanism by which due diligence becomes reusable rather than
+          episodic. An auction house that verifies provenance and produces a report can present it to a buyer, who
+          can independently confirm the claims by scanning the chain themselves. The coordination tax shrinks with
+          each successive verification.
+        </p>
+
+        <h2>Alignment with responsible art market principles</h2>
+        <p>
+          The Responsible Art Market (RAM) initiative presupposes that due diligence outputs are reusable -- that once
+          provenance is verified, that verification persists. In practice, this assumption frequently fails because
+          verification is conducted as private PDFs and internal memoranda that do not survive the transaction.
+        </p>
+        <p>
+          The SRA disclosure protocol renders RAM principles executable by providing the persistence layer RAM implicitly
+          requires. Works with deep chain-of-custody logs, active RA bindings, and a history of independent Verification
+          Reports become easier and cheaper to transact. This compliance premium makes disciplined participation
+          economically rational: lower insurance premiums, faster consignment acceptance, stronger collateral potential,
+          and greater institutional willingness to lend or exhibit.
+        </p>
+
+        <h2>Key takeaways</h2>
+        <ul>
+          <li>Disclosure Packages bundle viewing keys with RA identity, asset metadata, and purpose-specific disclosure terms.</li>
+          <li>Ten verifier roles and four dossier tiers calibrate information depth to each party's actual need.</li>
+          <li>Viewing key irrevocability is addressed through advisory expiry, contractual controls, and the Disclosure Ledger.</li>
+          <li>Verification Reports make due diligence cumulative: each independent verification lowers the cost for the next.</li>
+          <li>Structured disclosure converts the SRA from a private vault into reusable coordination infrastructure.</li>
+          <li>The framework aligns with RAM principles and maps directly onto existing institutional due diligence workflows.</li>
+        </ul>
+
+        <h2>Read the full specification</h2>
+        <ul>
+          <li><a href="../specs/disclosure/index.html">ZIP-SRA-DISCLOSURE: Shielded Registry Selective Disclosure Workflows</a></li>
+        </ul>
+      </article>
+    </main>
+    <site-footer root="../"></site-footer>
+  </body>
+</html>

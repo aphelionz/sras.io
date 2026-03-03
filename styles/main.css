@@ -664,3 +664,72 @@ input[type="range"] {
     text-align: center;
   }
 }
+
+/* Spec preamble table */
+.spec-preamble {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: var(--space-5);
+  font-size: var(--text-sm);
+}
+
+.spec-preamble th,
+.spec-preamble td {
+  text-align: left;
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--line);
+}
+
+.spec-preamble th {
+  font-weight: 600;
+  white-space: nowrap;
+  width: 10rem;
+  color: var(--muted);
+}
+
+/* Reading-context tables & code */
+.reading pre {
+  background: var(--surface-alt);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  overflow-x: auto;
+  font-size: var(--text-sm);
+  line-height: 1.5;
+  max-width: 100%;
+}
+
+.reading code {
+  font-family: ui-monospace, "SF Mono", "Menlo", "Consolas", monospace;
+  font-size: 0.9em;
+}
+
+.reading pre code {
+  font-size: inherit;
+}
+
+.reading table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-block: var(--space-4);
+  font-size: var(--text-sm);
+}
+
+.reading th,
+.reading td {
+  text-align: left;
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--line);
+}
+
+.reading th {
+  font-weight: 600;
+  background: var(--surface-alt);
+}
+
+/* Spec zone divider */
+.spec-section {
+  border-top: 3px solid var(--accent);
+  padding-top: var(--space-6);
+  margin-top: var(--space-8);
+}

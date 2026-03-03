@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Introducing ZIP-SRA-EVENTS: Chain-of-Custody as Append-Only Record</title>
+    <meta
+      name="description"
+      content="What happens when every stewardship claim becomes an auditable, tamper-evident record anchored in a shielded blockchain."
+    />
+    <meta property="og:title" content="Introducing ZIP-SRA-EVENTS: Chain-of-Custody as Append-Only Record" />
+    <meta property="og:description" content="Six event types, Lamport clocks, and a non-binary evidentiary taxonomy for real-world asset registries." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://sras.io/blog/zip-events.html" />
+    <link rel="canonical" href="https://sras.io/blog/zip-events.html" />
+    <link rel="stylesheet" href="../styles/main.css" />
+    <script type="module" src="../scripts/components.js"></script>
+    <script type="module" src="../scripts/site.js"></script>
+  </head>
+  <body>
+    <site-header current="blog" root="../"></site-header>
+    <main id="main-content" class="reading">
+      <article class="section" data-reveal>
+        <p class="kicker">Blog</p>
+        <h1>Introducing ZIP-SRA-EVENTS: Chain-of-Custody as Append-Only Record</h1>
+        <p class="lead">
+          Registries for real-world assets still depend on opaque databases and paper files that are hard to audit, easy
+          to fragment, and trivial to quietly edit. ZIP-SRA-EVENTS replaces this with per-asset, append-only event logs
+          anchored in Zcash's shielded pool.
+        </p>
+        <p><time datetime="2026-03-03">March 3, 2026</time></p>
+        <div class="tag-row">
+          <span class="tag">ZIP</span>
+          <span class="tag">Chain of Custody</span>
+          <span class="tag">Events</span>
+        </div>
+
+        <h2>From opaque databases to append-only logs</h2>
+        <p>
+          Each time a work changes hands -- from estate to dealer, dealer to auction house, auction house to collector,
+          collector to museum -- trust must be re-purchased from scratch. Prior verification work leaves no reusable
+          trace. This reset dynamic imposes a coordination tax that compounds over time: uncertainty discounts,
+          institutional withdrawal, and the gradual devaluation of works whose documentary infrastructure cannot keep
+          pace with their circulation.
+        </p>
+        <p>
+          ZIP-SRA-EVENTS addresses this by defining a protocol where the Registry Authority (RA) maintains per-asset
+          Chain of Custody logs as append-only sequences of signed transactions in Zcash's Orchard shielded pool.
+          Verification work becomes cumulative infrastructure rather than a repeated private expense.
+        </p>
+
+        <h2>Six event types and what they track</h2>
+        <p>
+          The specification defines six event types, each with a specific registrarial purpose. REGISTER anchors a new
+          artwork into the protocol. TRANSFER records the RA's recognition that custodianship has changed. STATUS tracks
+          operational changes (on loan, in conservation, stolen, lost, damaged, destroyed, deaccessioned). REVISION
+          corrects or updates prior claims through addition, not deletion. DISPUTE flags contested claims as a visible,
+          non-terminal response to uncertainty. DOSSIER_UPDATE commits to updated documentary evidence without changing
+          other aspects of the record.
+        </p>
+        <p>
+          Together, these six types cover the full lifecycle of an artwork's stewardship record. The design is
+          intentionally narrow: the protocol records who issued what and when, in a tamper-evident order. It does not
+          attempt to settle disputes, enforce ownership, or replace curatorial judgment.
+        </p>
+
+        <h2>The Canonical Artwork ID</h2>
+        <p>
+          Every artwork in the protocol receives a Canonical Artwork ID (CAID) derived deterministically from the
+          registry identifier via Blake2b-256. This derivation produces a per-asset viewing key and unified address
+          through ZIP-32 child key derivation. The CAID is not a token of ownership; it is a semantic anchor that
+          ensures referential continuity across institutional, scholarly, and market contexts.
+        </p>
+        <p>
+          It is recommended that the underlying registry identifier be non-semantic (e.g. a UUID) to minimize
+          information disclosure if an unauthorized party obtains the viewing key. A human-readable identifier like
+          "ERL-painting-042" would leak contextual information beyond the event log itself.
+        </p>
+
+        <h2>Why revision is addition, not deletion</h2>
+        <p>
+          A traditional database corrects error by overwriting the prior record. The previous claim disappears. While
+          administratively efficient, this destroys the visible trace of intellectual evolution -- it collapses the
+          historical path of inquiry into a single present-tense assertion.
+        </p>
+        <p>
+          The REVISION event preserves the chronological trace of knowledge growth. When new evidence changes the RA's
+          understanding of an asset, the RA issues a REVISION that references the prior claim and anchors the updated
+          understanding. The registry shows what was believed at time T1, what was later discovered at T2, and how
+          interpretation evolved. Correction becomes a sign of epistemic strength rather than weakness.
+        </p>
+
+        <h2>The evidentiary taxonomy: beyond authentic vs. fake</h2>
+        <p>
+          The binary "authentic / fake" dichotomy is incompatible with the epistemic reality of art historical practice.
+          Attribution exists on a spectrum of confidence. Provenance can be strong for some periods and weak for others.
+          A registry that forces binary classification either produces false certainty or false exclusion.
+        </p>
+        <p>
+          ZIP-SRA-EVENTS defines four evidentiary levels: REGISTERED (fully verified and documented), PROVISIONAL
+          (strong historical evidence but pending updated inspection), DISPUTED (actively contested), and UNVERIFIED
+          (referenced in historical records but lacking current documentation). This taxonomy renders epistemic states
+          visible and structured, replacing informal whisper networks with auditable procedural signals.
+        </p>
+
+        <h2>How Lamport clocks detect tampering</h2>
+        <p>
+          Every event carries a Lamport clock (monotonically increasing per asset) and a hash chain reference
+          (Blake2b-256 of the previous event's payload). Together, they create a dual integrity mechanism: the clock
+          enforces monotonicity, and the hash chain enforces content integrity.
+        </p>
+        <p>
+          A verifier who detects a gap in the clock sequence knows events have been omitted. A verifier who finds a hash
+          mismatch knows content has been tampered with. The protocol cannot prevent an RA from censoring events -- but
+          it guarantees that included events cannot be silently reordered or edited after publication.
+        </p>
+
+        <h2>Progressive anchoring: integrity before completeness</h2>
+        <p>
+          Conventional catalogues raisonnes often postpone publication until exhaustive documentation is achieved, which
+          in resource-constrained estates can take decades. ZIP-SRA-EVENTS reverses this order: it prioritizes
+          chronological integrity over immediate completeness.
+        </p>
+        <p>
+          The RA begins by registering works whose documentation is already robust (as REGISTERED), then progressively
+          anchors works with weaker documentation (as PROVISIONAL or UNVERIFIED). This ensures the registry does not
+          prematurely confer legitimacy, nor does it erase uncertainty. For estates where much of the oeuvre resides
+          outside direct physical control, progressive anchoring functions as a formal invitation to the market:
+          collectors are invited to submit documentation for integration into a durable integrity chain.
+        </p>
+
+        <h2>Key takeaways</h2>
+        <ul>
+          <li>Six event types cover the full lifecycle: registration, transfer, status, revision, dispute, and dossier updates.</li>
+          <li>Append-only with revision converts correction from reputational risk into procedural normality.</li>
+          <li>The non-binary evidentiary taxonomy replaces false certainty with structured, auditable confidence levels.</li>
+          <li>Lamport clocks and hash chains provide tamper detection without requiring consensus-level enforcement.</li>
+          <li>Per-asset viewing keys enable selective disclosure: one asset's history can be verified without exposing others.</li>
+          <li>Progressive anchoring prioritizes integrity over completeness, allowing incremental adoption.</li>
+        </ul>
+
+        <h2>Read the full specification</h2>
+        <ul>
+          <li><a href="../specs/events/index.html">ZIP-SRA-EVENTS: Shielded Registry Chain-of-Custody Logs</a></li>
+        </ul>
+      </article>
+    </main>
+    <site-footer root="../"></site-footer>
+  </body>
+</html>
